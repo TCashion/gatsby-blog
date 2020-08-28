@@ -33,24 +33,13 @@ const Header = ({ siteTitle }: Props) => (
       </h1>
       <h3>
         <Link 
-          to="/About/"
+          to="/about/"
           style={{
             color: `white`,
             textDecoration: `none`,
           }}
         >
           About Me
-        </Link>
-      </h3>
-      <h3>
-        <Link 
-          to="/page-2/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          Page 2
         </Link>
       </h3>
     </div>

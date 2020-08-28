@@ -6,6 +6,4 @@
 
 // You can delete this file if you're not using it
 
-const path = require('path');
-
-const aboutPage = path.resolve('./src/pages/about.tsx');
+const path = require('path')
