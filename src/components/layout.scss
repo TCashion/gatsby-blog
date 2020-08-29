@@ -1,12 +1,31 @@
+$main-minus-two: #666B6E;
+$main-minus-one: #25323B;
+$main-color: #1F2021; /* rgb(31,32,33) */
+$main-plus-one: #6B8696;   /* accents,buttons */
+$main-plus-two: #DCE6EC;   /* font */
+
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
+body,
+header, footer {
+  background-color: $main-color;
+}
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  h1,
+  h2,
+  h3,
+  h4,
+  p, 
+  a,
+  footer {
+    color: $main-plus-two
+  }
 }
 article,
 aside,
