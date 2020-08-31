@@ -660,5 +660,30 @@ header{
 
 footer {
   text-align: center;
+}
 
+// crop and center images 
+.image-cropper {
+  width: 500px;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+  border: solid 3px var(--main-plus-one);
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+/* for vertically-oriented images */
+.round-img {
+  height: auto; 
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* for horizontally-oriented images */
+.round-img-horiz {
+  height: 100%; 
+  width: auto;
+  margin: 0 auto;
+  margin-left: -25%;
 }
