@@ -2,6 +2,9 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
+// import assets 
+import gatsbyLogo from '../images/gatsby-icon.png';
+
 interface Props {
   siteTitle: string
 }
@@ -19,28 +22,52 @@ const Header = ({ siteTitle }: Props) => (
         padding: `1.45rem 1.0875rem`,
       }}
     >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
+      <div className="row">
+        <h1 style={{ margin: 0 }}>
+          <Link
+            to="/"
+            style={{
+              color: `white`,
+              textDecoration: `none`,
+            }}
+          >
+            {siteTitle}
+          </Link>
+        </h1>
+      </div>
+      <div className="row">
+        <h3>
+          <Link 
+            to="/"
+            style={{
+              color: `white`,
+              textDecoration: `none`,
+            }}
+          >
+            Home
+          </Link>
+        </h3>
+        <p>|</p>
+        <h3>
+          <Link 
+            to="/about/"
+            style={{
+              color: `white`,
+              textDecoration: `none`,
+            }}
+          >
+            About Me
+          </Link>
+        </h3>
+        {/* sample for image: */}
+        {/* <img 
           style={{
-            color: `white`,
-            textDecoration: `none`,
+            width: '100px'
           }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-      <h3>
-        <Link 
-          to="/about/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          About Me
-        </Link>
-      </h3>
+          src={gatsbyLogo} 
+          alt="Gatsby Logo"
+        /> */}
+      </div>
     </div>
   </header>
 )

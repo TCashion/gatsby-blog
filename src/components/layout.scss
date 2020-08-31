@@ -23,6 +23,8 @@ body {
   h4,
   p, 
   a,
+  ul, 
+  li,
   footer {
     color: $main-plus-two
   }
@@ -638,4 +640,25 @@ pre tt:after {
   html {
     font-size: 100%;
   }
+}
+
+
+// custom styling
+header{
+  display: flex;
+  div {
+    .row {
+      display: flex;
+      padding: 15px;
+      div,
+      p {
+        margin: 0 10px;
+      }
+    }
+  }
+}
+
+footer {
+  text-align: center;
+
 }
