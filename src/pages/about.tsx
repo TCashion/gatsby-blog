@@ -17,6 +17,9 @@ const About = () => (
                     className="roung-img"
                     src={headshot} 
                     alt="Travis Cashion headshot"
+                    style={{
+                        marginTop: '-20%'
+                    }}
                 />
             </div>
             <br />
