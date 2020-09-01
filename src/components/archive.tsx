@@ -12,7 +12,13 @@ interface Edge {
             path: string,
             title: string,
             date: string,
-            featureImage: string,
+            featuredImage: {
+                childImageSharp: {
+                    fixed: {
+                        src: string
+                    }
+                }
+            },
         }
     }
 }
@@ -28,7 +34,11 @@ const Archive = () => {
               date(formatString: "MMMM DD, YYYY")
               path
               featuredImage {
-                absolutePath
+                childImageSharp {
+                    fixed {
+                      src
+                    }
+                  }
               }
             }
             excerpt
@@ -40,10 +50,38 @@ const Archive = () => {
 
   return (
     <>
-      <aside>
+      <aside 
+        style={{
+            display: 'flex'
+        }}
+      >
         <h3>Archive</h3>
         {data.allMarkdownRemark.edges.map((edge: Edge, idx: number) => (
-            <li key={idx}>{ edge.node.frontmatter.title }</li>
+            <div className="row blog-preview" key={ edge.node.frontmatter.title }>
+                <div className="row">
+                    <div className="col col-4">
+                        <div className="image-cropper">
+                            <a href="blog_pages/ritual.html">
+                                <img 
+                                    className="round-img" 
+                                    alt={edge.node.frontmatter.title} 
+                                    src={edge.node.frontmatter.featuredImage.childImageSharp.fixed.src } 
+                                />
+                            </a>
+                        </div>
+                    </div>
+                    <div className="col col-8 post-preview">
+                        <h2>{ edge.node.frontmatter.title }</h2>
+                        <p>
+                            { edge.node.excerpt }
+                        </p>
+                        <form method="get" action="blog_pages/ritual.html">
+                            <button>Read More</button>
+                        </form>
+                        <p>Published { edge.node.frontmatter.date }</p>
+                    </div>
+                </div>
+            </div>
         ))}
       </aside>
     </>

@@ -1,33 +1,12 @@
-$main-minus-two: #666B6E;
-$main-minus-one: #25323B;
-$main-color: #1F2021; /* rgb(31,32,33) */
-$main-plus-one: #6B8696;   /* accents,buttons */
-$main-plus-two: #DCE6EC;   /* font */
-
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
-body,
-header, footer {
-  background-color: $main-color;
-}
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  h1,
-  h2,
-  h3,
-  h4,
-  p, 
-  a,
-  ul, 
-  li,
-  footer {
-    color: $main-plus-two
-  }
 }
 article,
 aside,
@@ -640,50 +619,4 @@ pre tt:after {
   html {
     font-size: 100%;
   }
-}
-
-
-// custom styling
-header{
-  display: flex;
-  div {
-    .row {
-      display: flex;
-      padding: 15px;
-      div,
-      p {
-        margin: 0 10px;
-      }
-    }
-  }
-}
-
-footer {
-  text-align: center;
-}
-
-// crop and center images 
-.image-cropper {
-  width: 500px;
-  height: 500px;
-  position: relative;
-  overflow: hidden;
-  border: solid 3px var(--main-plus-one);
-  border-radius: 50%;
-  margin: 0 auto;
-}
-
-/* for vertically-oriented images */
-.round-img {
-  height: auto; 
-  width: 100%;
-  margin: 0 auto;
-}
-
-/* for horizontally-oriented images */
-.round-img-horiz {
-  height: 100%; 
-  width: auto;
-  margin: 0 auto;
-  margin-left: -25%;
 }
