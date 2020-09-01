@@ -10,6 +10,7 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
+import Archive from "./archive"
 import "./layout.scss"
 
 interface Props {
@@ -37,7 +38,14 @@ const Layout = ({ children }: Props) => {
           padding: `0 1.0875rem 1.45rem`,
         }}
       >
-        <main>{children}</main>
+        <main>
+          <div>
+            {children}
+          </div>
+          <div>
+            <Archive />  
+          </div>  
+        </main>
         <footer>
           © {new Date().getFullYear()} Designed and built by Travis Cashion | 
           {` `}

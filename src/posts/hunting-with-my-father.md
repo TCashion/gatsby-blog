@@ -11,7 +11,7 @@ We started spotting elk on day one, and over the course of the hunt I found myse
 
 By the late afternoon on day five, I had squandered as many chances as a reasonable person could hope for. My buddies and I had hunted hard, and I was exhausted. By that time our group had dwindled to two hunters: myself and my friend from college, Mike. Two others had gone back to work. The fifth, Mike’s dad, decided not to hunt the last day. On that final evening, Mike and I settled in on a hillside overlooking a large meadow to watch the sun set. Our rifles were loaded, but we did not expect to shoot them. We both leaned back and dozed off.
 
-![Meadow]()
+![Meadow](../images/hunting-w-my-father.jpg)
 
 After about an hour, I heard a cow call that stirred me awake. As if in a dream, I watched two tan forms run from the woods into the meadow directly in front of me. The lead cow stopped in the meadow, completely unaware of our presence. In a dramatic whisper, I alerted Mike while simultaneously leaning forward and pulling out my range finder. The cow was standing exactly 200 yards ahead, broadside and at a flat trajectory. I leveled my rifle and squeezed the trigger. Even for a novice marksmen like me, it was an easy shot. I chambered a new round and found her again in my scope. By that time she was on the run but I could clearly see a red dot right where her lungs would be. She ran downhill and to my right, crashing into a stand of willows. She never came out the other side.
 
