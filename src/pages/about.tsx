@@ -6,7 +6,7 @@ import headshot from '../images/headshot.jpg'
 const About = () => (
     <Layout>
         <SEO title="About Me" />
-        <div>
+        <div className="left-content">
             <h2>About me</h2>
             <p>
                 My name is Travis Cashion. I was born and raised in the beautiful state of Colorado. I am a family man, a programmer, a writer, and an adventurer. I love to build things, learn new skills and technologies, and spend time in nature.
