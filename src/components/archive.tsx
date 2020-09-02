@@ -1,32 +1,31 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-
-interface Props {
-  children?: any
-}
+import { useStaticQuery, graphql, Link } from "gatsby"
 
 interface Edge {
-    node: {
-        excerpt: string,
-        frontmatter: {
-            path: string,
-            title: string,
-            date: string,
-            featuredImage: {
-                childImageSharp: {
-                    fixed: {
-                        src: string
-                    }
-                }
-            },
-        }
-    }
+  node: {
+      excerpt: string,
+      frontmatter: {
+          path: string,
+          title: string,
+          date: string,
+          featuredImage: {
+              childImageSharp: {
+                  fixed: {
+                      src: string
+                  }
+              }
+          },
+      }
+  }
 }
 
 const Archive = () => {
   const data = useStaticQuery(graphql`
     query BlogPostArchive {
-      allMarkdownRemark {
+      allMarkdownRemark (limit: 5 sort: {
+        order: DESC
+        fields: [frontmatter___date]
+      }) {
         edges {
           node {
             frontmatter {
@@ -52,21 +51,21 @@ const Archive = () => {
     <>
       <aside>
         <div className="row">
-          <div className="centered-content">
+          <div className="center-content">
             <h2>Archive</h2>
           </div>
           {data.allMarkdownRemark.edges.map((edge: Edge, idx: number) => (
-              <div className="row blog-preview" key={ edge.node.frontmatter.title }>
+              <div className="row blog-preview" key={ edge.node.frontmatter.path }>
                   <div className="row">
                       <div className="col col-4">
                           <div className="image-cropper">
-                              <a href="blog_pages/ritual.html">
+                              <Link to={ edge.node.frontmatter.path }>
                                   <img 
                                       className="round-img" 
                                       alt={edge.node.frontmatter.title} 
                                       src={edge.node.frontmatter.featuredImage.childImageSharp.fixed.src } 
                                   />
-                              </a>
+                              </Link>
                           </div>
                       </div>
                       <div className="col col-8 post-preview">
@@ -74,9 +73,9 @@ const Archive = () => {
                           <p>
                               { edge.node.excerpt }
                           </p>
-                          <form method="get" action="blog_pages/ritual.html">
+                          <Link to={ edge.node.frontmatter.path }>
                               <button>Read More</button>
-                          </form>
+                          </Link>
                           <p>Published { edge.node.frontmatter.date }</p>
                       </div>
                   </div>

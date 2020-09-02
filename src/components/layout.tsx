@@ -40,7 +40,7 @@ const Layout = ({ children }: Props) => {
       >
         <main>
           <div className="row">
-            <div className="centered-content">
+            <div className="center-content">
               {children}
             </div>
           </div>

@@ -92,8 +92,11 @@ aside {
 }
 
 .row {
-  .centered-content {
+  .center-content {
     text-align: center;
+  }
+  .left-content {
+    text-align: left;
   }
 }
 
@@ -101,7 +104,8 @@ aside {
 COMMON ELEMENTS
 **************************************** */
 
-button {
+button,
+.btn {
   color: $main-plus-two;
   background-color: $main-plus-one;
   border: none;
@@ -177,7 +181,10 @@ blog class tags used on portfolio page for simplicity. Outlined in same format
   padding: 20px 0;
 }
 
-.blog-preview, .filter, .page-title {
+.blog-preview, 
+.filter, 
+.page-title,
+aside > .row .center-content {
   border-bottom: rgb(90, 90, 90) 1px solid; 
 }
 
