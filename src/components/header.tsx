@@ -24,25 +24,14 @@ const Header = ({ siteTitle }: Props) => (
     >
       <div className="row">
         <h1 style={{ margin: 0 }}>
-          <Link
-            to="/"
-            style={{
-              color: `white`,
-              textDecoration: `none`,
-            }}
-          >
             {siteTitle}
-          </Link>
         </h1>
       </div>
       <div className="row">
         <h3>
           <Link 
             to="/"
-            style={{
-              color: `white`,
-              textDecoration: `none`,
-            }}
+            style={{ textDecoration: `none` }}
           >
             Home
           </Link>
@@ -51,22 +40,11 @@ const Header = ({ siteTitle }: Props) => (
         <h3>
           <Link 
             to="/about/"
-            style={{
-              color: `white`,
-              textDecoration: `none`,
-            }}
+            style={{ textDecoration: `none` }}
           >
             About Me
           </Link>
         </h3>
-        {/* sample for image: */}
-        {/* <img 
-          style={{
-            width: '100px'
-          }}
-          src={gatsbyLogo} 
-          alt="Gatsby Logo"
-        /> */}
       </div>
     </div>
   </header>

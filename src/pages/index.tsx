@@ -8,7 +8,7 @@ import '../styles/global.scss'
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <h1>Trav's Blog</h1>
+    <h2>Trav's Blog</h2>
     <p>Welcome to the Gatsby-powered version of my blog.</p>
     <p>Writing is one of my passions. I hope you enjoy!</p>
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}></div>

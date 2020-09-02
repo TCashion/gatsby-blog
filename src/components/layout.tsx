@@ -39,8 +39,10 @@ const Layout = ({ children }: Props) => {
         }}
       >
         <main>
-          <div>
-            {children}
+          <div className="row">
+            <div className="centered-content">
+              {children}
+            </div>
           </div>
           <div>
             <Archive />  
