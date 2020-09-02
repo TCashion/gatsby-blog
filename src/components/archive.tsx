@@ -59,7 +59,7 @@ const Archive = () => {
                   <div className="row">
                       <div className="col col-4">
                           <div className="image-cropper">
-                              <Link to={ edge.node.frontmatter.path }>
+                              <Link to={ `/posts${edge.node.frontmatter.path}` }>
                                   <img 
                                       className="round-img" 
                                       alt={edge.node.frontmatter.title} 
@@ -73,7 +73,7 @@ const Archive = () => {
                           <p>
                               { edge.node.excerpt }
                           </p>
-                          <Link to={ edge.node.frontmatter.path }>
+                          <Link to={ `/posts${edge.node.frontmatter.path}` }>
                               <button>Read More</button>
                           </Link>
                           <p>Published { edge.node.frontmatter.date }</p>

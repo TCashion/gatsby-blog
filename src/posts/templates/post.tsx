@@ -9,7 +9,9 @@ interface Props {
             frontmatter: {
                 title: string
                 date: string
-                featuredImage: string
+                featuredImage: {
+                    absolutePath: string
+                }
             }
             html: string
         }
@@ -17,15 +19,15 @@ interface Props {
 }
 
 export default function Template({ data }: Props) {
-    const { markdownRemark: post } = data;
+    const { markdownRemark } = data;
 
     return (
         <Layout>
-            <SEO title={post.frontmatter.title} />
+            <SEO title={markdownRemark.frontmatter.title} />
             <div>
-                <h1>{post.frontmatter.title}</h1>
+                <h1>{markdownRemark.frontmatter.title}</h1>
                 <div className="left-content">
-                    <div dangerouslySetInnerHTML={{ __html: post.html }}></div>
+                    <div dangerouslySetInnerHTML={{ __html: markdownRemark.html }}></div>
                 </div>
             </div>
         </Layout>
@@ -33,16 +35,20 @@ export default function Template({ data }: Props) {
 }
 
 export const postQuery = graphql`
-    query BlogPostByPath( $path: String! ) {
-        markdownRemark(frontmatter: { path: { eq: $path} }) {
+    query BlogPostQuery($slug: String!) {
+        markdownRemark(frontmatter: {
+            path: {
+                eq: $slug
+            }
+        }) {
             html
             frontmatter {
-                path
                 title
-                featuredImage {
-                    absolutePath
-                }
                 date
+                path
+                featuredImage {
+                absolutePath
+                }
             }
         }
     }

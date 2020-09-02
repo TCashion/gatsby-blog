@@ -21,42 +21,59 @@ Path module:
 is part of node, so does not need to be installed. 
 Generates the path based on the root of the project
 
+Promise: 
+says, 'run graphql with the query we give it,'
+and the results will be returned via the Promise's .then method
+
+Context property: 
+Is what allows us to pass in data to the page when it is rendered
+
 **/
 
 const path = require('path');
+const { resolve } = require('path');
 
 exports.createPages = ({ graphql, actions }) => {
-    const {createPage} = actions;
+    const { createPage } = actions;
     const postTemplate = path.resolve('./src/posts/templates/post.tsx');
 
-    return graphql(`{
-        allMarkdownRemark {
-            edges {
-                node {
-                    frontmatter {
-                        title
-                        date(formatString: "MMMM DD, YYYY")
-                        path
-                        featuredImage {
-                            absolutePath
+    return new Promise((resolve, reject) => {
+        graphql(`
+        {
+            allMarkdownRemark {
+                edges {
+                    node {
+                        frontmatter {
+                            title
+                            date(formatString: "MMMM DD, YYYY")
+                            path
+                            featuredImage {
+                                absolutePath
+                            }
                         }
+                        excerpt
+                        html
                     }
-                    excerpt
-                    html
                 }
             }
         }
-    }`)
-    .then(res => {
-        if (res.errors) {
-            return Promise.reject(res.errors);
-        };
-
-        res.data.allMarkdownRemark.edges.forEach( ({ node }) => {
-            createPage({
-                path: node.frontmatter.path,
-                component: postTemplate
+        `)
+        .then(res => {
+            if (res.errors) {
+                return reject(res.errors);
+            };
+    
+            res.data.allMarkdownRemark.edges.forEach( ({ node }) => {
+                createPage({
+                    path: `/posts${node.frontmatter.path}`,
+                    component: postTemplate,
+                    context: {
+                        slug: node.frontmatter.path,
+                        featuredImage: node.frontmatter.featuredImage.absolutePath
+                    }
+                })
             })
+            resolve(); 
         })
     });
 }
